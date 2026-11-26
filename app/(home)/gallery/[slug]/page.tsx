@@ -42,7 +42,7 @@ export default async function EntryPage(props: PageProps<"/gallery/[slug]">) {
   if (d.citation) facts.push(["Cite as", d.citation]);
 
   return (
-    <main className="container max-w-3xl py-12 px-4">
+    <main className="container mx-auto max-w-3xl py-12 px-4">
       <Link
         href="/gallery"
         className="text-sm text-fd-muted-foreground hover:underline"

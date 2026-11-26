@@ -28,7 +28,7 @@ export default function GalleryPage() {
     .sort((a, b) => a.title.localeCompare(b.title));
 
   return (
-    <main className="container max-w-6xl py-12 px-4">
+    <main className="container mx-auto max-w-6xl py-12 px-4">
       <h1 className="text-3xl font-bold mb-2">Gallery</h1>
       <p className="text-fd-muted-foreground mb-8 max-w-2xl">
         Public datasets read straight from cloud storage. Open one in Octant's
