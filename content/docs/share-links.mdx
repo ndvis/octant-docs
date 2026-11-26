@@ -33,11 +33,43 @@ units, or labels; `#n` is the n-th position.
 
 ## Link to Octant from your own page
 
-Any page can open a store in Octant with a link holding only `src`, plus `var` to choose
-the variable:
+Add an **Open in Octant** badge to a README, a dataset page or a paper's website. Pick
+the long or the short badge, copy its snippet, and replace the link with your own: the
+one **Share** copies in Octant, or the web app's address with `?src=` and your store.
 
-```html
-<a href="https://ndvis.github.io/octant/?src=https%3A%2F%2Fexample.org%2Fdata.zarr">
-  Open in Octant
-</a>
-```
+<BadgePreview />
+
+The badges carry their own dark background, so they read on light and dark pages, and
+need no script or stylesheet: they work on GitHub, GitLab, PyPI, Zenodo and any website.
+
+<Tabs items={['Markdown', 'HTML']}>
+  <Tab value="Markdown">
+    ```md title="Open in Octant"
+    [![Open in Octant](https://ndvis.github.io/octant-docs/badge/open-in-octant.svg)](https://ndvis.github.io/octant/?src=https://example.org/data.zarr)
+    ```
+
+    ```md title="Icon only"
+    [![Open in Octant](https://ndvis.github.io/octant-docs/badge/octant.svg)](https://ndvis.github.io/octant/?src=https://example.org/data.zarr)
+    ```
+
+  </Tab>
+  <Tab value="HTML">
+    ```html title="Open in Octant"
+    <a href="https://ndvis.github.io/octant/?src=https://example.org/data.zarr">
+      <img src="https://ndvis.github.io/octant-docs/badge/open-in-octant.svg" alt="Open in Octant" height="28">
+    </a>
+    ```
+
+    ```html title="Icon only"
+    <a href="https://ndvis.github.io/octant/?src=https://example.org/data.zarr">
+      <img src="https://ndvis.github.io/octant-docs/badge/octant.svg" alt="Open in Octant" height="28">
+    </a>
+    ```
+
+  </Tab>
+</Tabs>
+
+A link can hold more than `src`: add `&var=` to choose the variable, or any [key](#keys)
+above. When the store address itself holds `&` or `?`, encode it
+(`encodeURIComponent` in JavaScript, `urllib.parse.quote(url, safe="")` in Python), as
+**Share** does.
