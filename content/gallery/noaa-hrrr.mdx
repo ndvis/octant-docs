@@ -1,0 +1,16 @@
+---
+title: NOAA HRRR 48-hour forecast
+description: High-Resolution Rapid Refresh, 3 km over the continental US, hourly steps out to 48 hours.
+store: https://dynamical-noaa-hrrr.s3.us-west-2.amazonaws.com/noaa-hrrr-forecast-48-hour-virtual/v0.5.0.icechunk/
+format: icechunk
+domain: weather
+tags: [forecast, virtual-chunks, grib]
+credit: NOAA, packaged by dynamical.org
+license: CC-BY-4.0
+license_url: https://creativecommons.org/licenses/by/4.0/
+source_page: https://dynamical.org/
+---
+
+An Icechunk repository whose chunks point into NOAA's original GRIB files. Octant reads
+the forecast as one array per variable, with initialization time and lead time as
+dimensions.

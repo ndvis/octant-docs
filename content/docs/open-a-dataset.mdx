@@ -1,0 +1,49 @@
+---
+title: Open a dataset
+description: Open a local file, a cloud store, or a link someone shared.
+---
+
+<Steps>
+<Step>
+
+### Start Octant
+
+Launch the desktop app, or open the [web app](https://ndvis.github.io/octant/).
+
+</Step>
+<Step>
+
+### Give it an address
+
+Paste a store address into the field on the start screen, or into **Dataset** in the top
+bar:
+
+- a cloud store: `s3://…`, `gs://…`, or `https://…`
+- a local file or folder (desktop), or drop one onto the window
+- a share link someone sent you
+
+On the desktop you can also pass the address when starting it: `octant <url or path>`.
+
+</Step>
+<Step>
+
+### Pick a variable and plot it
+
+**Variables** lists the arrays in the dataset. Select one, set its dimensions in
+**Dimensions**, and choose how to draw it: heatmap, line, surface, globe, volume or point
+cloud. Octant reads only the chunks the view needs, and finer levels of a multiscale
+pyramid as you zoom.
+
+</Step>
+</Steps>
+
+## Try one from the gallery
+
+The [gallery](/gallery) lists public datasets, credited to their providers. **Open in
+Octant** opens one in the web app; **Copy link** gives a link to paste into the desktop
+app.
+
+## Share what you see
+
+**Share** in the Settings header copies a link to the current plot: the dataset,
+variable, dimensions, colormap and zoomed view. See [share links](/docs/share-links).

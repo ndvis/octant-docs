@@ -1,0 +1,12 @@
+{
+  "title": "Docs",
+  "pages": [
+    "---Get started---",
+    "index",
+    "installation",
+    "open-a-dataset",
+    "---Reference---",
+    "formats",
+    "share-links"
+  ]
+}

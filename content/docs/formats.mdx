@@ -1,0 +1,27 @@
+---
+title: Supported formats
+description: The file formats and storage Octant reads.
+---
+
+| Format | Notes |
+|---|---|
+| [Zarr](https://zarr.dev/) v2 and v3 | Including sharded arrays, GeoZarr `multiscales` pyramids |
+| [Icechunk](https://icechunk.io/) | Repositories, including virtual chunks pointing into other files |
+| [OME-Zarr](https://ngff.openmicroscopy.org/) | Images, label images and plates, with their OMERO channel settings |
+| GeoTIFF, Cloud-Optimized GeoTIFF | Reads overviews as pyramid levels |
+| [NetCDF](https://www.unidata.ucar.edu/software/netcdf/) | Classic and NetCDF-4 |
+| [HDF5](https://www.hdfgroup.org/solutions/hdf5/), MATLAB v7.3 `.mat` | |
+| GRIB2 | JPEG2000-packed fields on desktop only; NOAA and ECMWF sidecar indexes (`.idx`, `.index`) speed up remote files on desktop |
+
+## Where data can live
+
+- Local disk (desktop), or files picked or dropped in the browser
+- Amazon S3, Google Cloud Storage, Azure, and plain HTTP
+
+Zarr, Icechunk and GeoTIFF read only the chunks the view needs. NetCDF, HDF5 and GRIB
+read locally or remotely over HTTP or S3, on desktop and in the browser.
+
+## In the browser
+
+A browser reads a remote server only when it answers with CORS headers. Stores without
+them open in the desktop app; the gallery marks them **Desktop only**.

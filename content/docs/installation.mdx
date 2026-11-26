@@ -1,0 +1,55 @@
+---
+title: Installation
+description: Install the desktop app, or build it from source.
+---
+
+## Desktop app
+
+Each [release](https://github.com/ndvis/octant/releases/latest) holds installers for every
+system.
+
+<Tabs items={['macOS', 'Windows', 'Linux']}>
+  <Tab value="macOS">
+    Download [`Octant-macOS-arm64.dmg`](https://github.com/ndvis/octant/releases/latest/download/Octant-macOS-arm64.dmg) (Apple silicon), open it and drag Octant to Applications.
+
+    The app is not signed yet: macOS says Octant "cannot be opened because Apple cannot verify it". Right-click Octant in Applications and choose **Open**, or click **Open Anyway** in System Settings > Privacy & Security.
+
+  </Tab>
+  <Tab value="Windows">
+    Download and run [`Octant-Windows-x64-setup.exe`](https://github.com/ndvis/octant/releases/latest/download/Octant-Windows-x64-setup.exe). For managed installs, the release also holds an `.msi` (`msiexec /i`).
+
+    The installer is not signed yet: when SmartScreen says "Windows protected your PC", click **More info**, then **Run anyway**.
+
+  </Tab>
+  <Tab value="Linux">
+    | Distribution | File | Install |
+    |---|---|---|
+    | Any (x86_64) | [`Octant-Linux-x86_64.AppImage`](https://github.com/ndvis/octant/releases/latest/download/Octant-Linux-x86_64.AppImage) | `chmod +x Octant-Linux-x86_64.AppImage`, then run it |
+    | Debian, Ubuntu | `octant_<version>_amd64.deb` | `sudo apt install ./octant_*.deb` |
+    | Arch | `octant_<version>_x86_64.tar.gz` and `PKGBUILD` | `makepkg -si` in the folder holding both |
+  </Tab>
+</Tabs>
+
+## From source
+
+You need [Rust](https://rust-lang.org/tools/install/) and [CMake](https://cmake.org/download/),
+which builds the bundled NetCDF and HDF5 libraries (macOS: `brew install cmake`,
+Debian/Ubuntu: `sudo apt install cmake`, Windows: included with the Visual Studio Build
+Tools' C++ workload).
+
+```bash
+cargo install octant
+octant                      # or: octant <url or path>
+```
+
+If the build fails because a dependency released a breaking update, install with the
+exact versions Octant was tested with:
+
+```bash
+cargo install octant --locked
+```
+
+## No install
+
+[Open Octant in your browser](https://ndvis.github.io/octant/). It needs a browser with
+WebGPU or WebGL2.

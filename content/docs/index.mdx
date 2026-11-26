@@ -1,0 +1,34 @@
+---
+title: Introduction
+description: What Octant is and what it reads.
+---
+
+Octant is an interactive viewer for N-dimensional datasets, stored locally or in cloud
+object storage. It is built in Rust with GPU rendering, and runs as a desktop app and in
+the browser from the same code.
+
+It brings Earth-science and bioimaging data into one app: GRIB forecasts and NetCDF model
+output next to OME-Zarr plates, drawn as heatmaps, globes, surfaces or GPU volumes on the
+same data.
+
+<Cards>
+  <Card title="Installation" href="/docs/installation">
+    Desktop installers for macOS, Windows and Linux, or build from source.
+  </Card>
+  <Card title="Open a dataset" href="/docs/open-a-dataset">
+    A local file, a cloud store, or a dataset from the gallery.
+  </Card>
+  <Card title="Supported formats" href="/docs/formats">
+    Zarr, Icechunk, OME-Zarr, NetCDF, HDF5, GRIB and GeoTIFF.
+  </Card>
+  <Card title="Gallery" href="/gallery">
+    Public datasets to open with one click.
+  </Card>
+</Cards>
+
+## Desktop or browser
+
+Octant is built first for the desktop, where it has your GPU, memory and files to itself.
+The [web app](https://ndvis.github.io/octant/) runs the same code compiled to WebAssembly,
+for a quick look or a shared link. In the browser, a server must allow cross-origin
+requests (CORS) for Octant to read it.

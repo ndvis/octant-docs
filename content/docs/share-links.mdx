@@ -1,0 +1,43 @@
+---
+title: Share links
+description: Links that open a dataset in Octant with a given plot.
+---
+
+A share link is the web app's address with a readable query describing the plot:
+
+```text
+https://ndvis.github.io/octant/?src=https://x/a.zarr&var=t2m&plot=heatmap&time=2020-01-01
+```
+
+It opens in the browser, or in the desktop app when pasted into its address field.
+**Share** in the Settings header builds one for the current plot.
+
+## Keys
+
+| Key | Meaning |
+|---|---|
+| `src` | The store address; `http(s)://`, `s3://` or `gs://`, never a local path |
+| `var` | The variable to plot |
+| `axes` | Dimensions on x, y and, for 3D plots, z: `lon,lat` |
+| `anim` | The dimension to animate along |
+| `<dimension>` | A dimension's value or range, `time=2020-01-01..2020-12-31`; `dim.<name>` for a dimension named like a key |
+| `step` | The animated dimension's current step |
+| `plot` | `heatmap`, `line`, `surface`, `volume`, `sphere` or `point cloud` |
+| `cmap` | The colormap, as `family:name` |
+| `range` | The color range, `250..310` |
+| `view` | A zoomed heatmap's visible window, `x0..x1,y0..y1` in coordinate values |
+| `overlay` | A variable drawn over the heatmap; repeat for more |
+
+Values are written as the coordinates read: ISO dates, numbers in the coordinate's
+units, or labels; `#n` is the n-th position.
+
+## Link to Octant from your own page
+
+Any page can open a store in Octant with a link holding only `src`, plus `var` to choose
+the variable:
+
+```html
+<a href="https://ndvis.github.io/octant/?src=https%3A%2F%2Fexample.org%2Fdata.zarr">
+  Open in Octant
+</a>
+```

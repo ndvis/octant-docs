@@ -1,0 +1,18 @@
+---
+title: NASA MUR Sea Surface Temperature
+description: Multi-scale Ultra-high Resolution SST, daily global analysis at 0.01°.
+store: https://mur-sst.s3.us-west-2.amazonaws.com/zarr-v1/
+format: zarr
+domain: ocean
+tags: [sst, satellite, daily]
+credit: NASA JPL PO.DAAC
+license: NASA open data
+license_url: https://www.earthdata.nasa.gov/engage/open-data-services-software-policies/data-use-guidance
+source_page: https://podaac.jpl.nasa.gov/dataset/MUR-JPL-L4-GLOB-v4.1
+open:
+  var: analysed_sst
+---
+
+A gap-free daily sea surface temperature analysis that blends several satellite
+instruments. At about 1 km over the whole globe, each day is a 17999 × 36000 grid:
+Octant reads only the chunks the view needs.
