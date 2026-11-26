@@ -4,7 +4,7 @@ import { useState } from "react";
 import { asset } from "@/lib/shared";
 
 const button =
-  "inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1.5 text-sm font-medium transition-colors hover:bg-fd-accent hover:text-fd-accent-foreground";
+  "inline-flex h-7 items-center gap-1.5 rounded-md border px-2.5 text-sm font-medium transition-colors hover:bg-fd-accent hover:text-fd-accent-foreground";
 
 function CopyButton({
   text,
@@ -45,7 +45,7 @@ export function OpenButtons({
   desktopOnly: boolean;
 }) {
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap items-center gap-2">
       {desktopOnly ? (
         <span
           className={`${button} cursor-not-allowed opacity-60`}
@@ -59,10 +59,14 @@ export function OpenButtons({
           href={href}
           target="_blank"
           rel="noreferrer"
-          className={`${button} bg-fd-primary text-fd-primary-foreground hover:bg-fd-primary/90 hover:text-fd-primary-foreground`}
+          className="rounded-md transition-opacity hover:opacity-85"
         >
-          <img src={asset("/octant-app-icon.svg")} alt="" className="size-4" />
-          Open in Octant
+          <img
+            src={asset("/badge/open-in-octant.svg")}
+            alt="Open in Octant"
+            width={138}
+            height={28}
+          />
         </a>
       )}
       {!desktopOnly && (
