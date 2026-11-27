@@ -17,7 +17,8 @@ It opens in the browser, or in the desktop app when pasted into its address fiel
 | Key | Meaning |
 |---|---|
 | `src` | The store address; `http(s)://`, `s3://` or `gs://`, never a local path |
-| `var` | The variable to plot |
+| `var` | The variable to plot; for a multiscale pyramid, its finest level (level 0) |
+| `multiscale_level` | Which level of a pyramid to read: `2` asks for level 2 (0 is the finest), or a coarser one if level 2 doesn't fit in memory; `auto:2` starts with at least level 2's detail, keeps refining as you zoom, and is also limited by memory. Without it, Octant picks the level that fits the screen |
 | `axes` | Dimensions on x, y and, for 3D plots, z: `lon,lat` |
 | `anim` | The dimension to animate along |
 | `<dimension>` | A dimension's value or range, `time=2020-01-01..2020-12-31`; `dim.<name>` for a dimension named like a key |
