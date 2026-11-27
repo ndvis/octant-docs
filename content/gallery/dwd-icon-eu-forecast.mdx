@@ -1,0 +1,25 @@
+---
+title: "DWD ICON-EU forecast, 5 day"
+description: "Numerical Weather Forecast"
+store: https://dynamical-dwd-icon-eu.s3.us-west-2.amazonaws.com/dwd-icon-eu-forecast-5-day/v0.2.0.icechunk/
+format: icechunk
+domain: weather
+credit: "DWD ICON-EU data processed by dynamical.org."
+license: "CC-BY-4.0"
+license_url: https://creativecommons.org/licenses/by/4.0/
+source_page: https://dynamical.org/catalog/dwd-icon-eu-forecast-5-day/
+citation: "dynamical.org dataset DOI: https://doi.org/10.5281/zenodo.18777399"
+open:
+  "var": "temperature_2m"
+  "init_time": "#1160"
+  "lead_time": "#2"
+  "axes": "longitude,latitude"
+  "latitude": "#1..#657"
+  "longitude": "#1..#1377"
+  "plot": "heatmap"
+  "cmap": "cmocean:thermal"
+  "range": "-7.656..19.88"
+thumbnail: /gallery/dwd-icon-eu-forecast.webp
+---
+
+High-resolution (0.0625 degree, about 7 km) weather forecasts for Europe from the ICON-EU model of Deutscher Wetterdienst, initialized every 6 hours, out to 5 days.

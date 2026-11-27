@@ -1,0 +1,25 @@
+---
+title: "NOAA GFS forecast"
+description: "Global Weather Forecast"
+store: https://dynamical-noaa-gfs.s3.us-west-2.amazonaws.com/noaa-gfs-forecast/v0.2.7.icechunk/
+format: icechunk
+domain: weather
+credit: "NOAA NWS NCEP GFS data processed by dynamical.org from NOAA Open Data Dissemination archives."
+license: "CC-BY-4.0"
+license_url: https://creativecommons.org/licenses/by/4.0/
+source_page: https://dynamical.org/catalog/noaa-gfs-forecast/
+citation: "dynamical.org dataset DOI: https://doi.org/10.5281/zenodo.18777399"
+open:
+  "var": "temperature_2m"
+  "init_time": "#8144"
+  "lead_time": "#2"
+  "axes": "longitude,latitude"
+  "latitude": "#1..#721"
+  "longitude": "#1..#1440"
+  "plot": "heatmap"
+  "cmap": "matplotlib:inferno"
+  "range": "-11.94..31.88"
+thumbnail: /gallery/noaa-gfs-forecast.webp
+---
+
+Global Forecast System (GFS) weather forecasts from NOAA NWS NCEP at 0.25 degrees, initialized every 6 hours since May 2021, out to 16 days.

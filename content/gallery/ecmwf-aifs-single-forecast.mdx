@@ -1,0 +1,25 @@
+---
+title: "ECMWF AIFS Single forecast"
+description: "Artificial Intelligence Forecasting System"
+store: https://dynamical-ecmwf-aifs-single.s3.us-west-2.amazonaws.com/ecmwf-aifs-single-forecast/v0.1.0.icechunk/
+format: icechunk
+domain: weather
+credit: "ECMWF AIFS Single forecast data processed by dynamical.org from ECMWF Open Data."
+license: "CC-BY-4.0 (plus ECMWF Terms of Use)"
+license_url: https://creativecommons.org/licenses/by/4.0/
+source_page: https://dynamical.org/catalog/ecmwf-aifs-single-forecast/
+citation: "dynamical.org dataset DOI: https://doi.org/10.5281/zenodo.18777399"
+open:
+  "var": "temperature_2m"
+  "init_time": "#3880"
+  "lead_time": "#2"
+  "axes": "longitude,latitude"
+  "latitude": "#1..#721"
+  "longitude": "#1..#1440"
+  "plot": "heatmap"
+  "cmap": "matplotlib:turbo"
+  "range": "-29.88..29.12"
+thumbnail: /gallery/ecmwf-aifs-single-forecast.webp
+---
+
+Global 0.25 degree forecasts from ECMWF's machine-learning Artificial Intelligence Forecasting System (AIFS), single deterministic run every 6 hours, out to 15 days.

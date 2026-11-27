@@ -1,0 +1,20 @@
+---
+title: "Ensemble Digital Terrain Model (EDTM) 30 m"
+description: "Global bare-earth elevation in meters, 10th percentile of the ensemble (OpenLandMap)"
+store: https://s3.openlandmap.org/arco/dtm.bareearth_ensemble_p10_30m_s_20180101_20181231_go_epsg.4326_v20230211.tif
+format: geotiff
+domain: earth-observation
+credit: "Yu-Feng Ho, Tomislav Hengl, Leandro Parente (OpenGeoHub / OpenLandMap); inputs from ALOS AW3D30 (JAXA), Copernicus GLO-30 and MERIT DEM."
+license: "CC-BY-SA-4.0"
+license_url: https://creativecommons.org/licenses/by-sa/4.0/
+source_page: https://doi.org/10.5281/zenodo.7676373
+citation: "Ho, Y. F., Hengl, T., Parente, L. (2023). Ensemble Digital Terrain Model (EDTM) of the world. Zenodo. https://doi.org/10.5281/zenodo.7676373"
+open:
+  "var": "band_1"
+  "plot": "heatmap"
+  "cmap": "cmocean:topo"
+  "range": "-17.5..2922"
+thumbnail: /gallery/olm-dtm-30m.webp
+---
+
+Global 30 m bare-earth elevation built as the 10th percentile of an ensemble of ALOS AW3D30, Copernicus GLO-30, MERIT DEM and national DTMs, with buildings and forest masked.

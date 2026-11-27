@@ -1,0 +1,26 @@
+---
+title: "SILAM global air quality / aerosol forecast"
+description: "Aerosol"
+store: https://data.source.coop/bkr/silam-dust/silam_aerosol.icechunk
+format: icechunk
+domain: weather
+credit: "Finnish Meteorological Institute (FMI), SILAM. Icechunk copy by Jacob Prince-Bieker (Source Cooperative, bkr/silam-dust)."
+license: "CC-BY-4.0"
+license_url: https://creativecommons.org/licenses/by/4.0/
+source_page: https://registry.opendata.aws/silam/
+citation: "SILAM Air Quality was accessed on DATE from https://registry.opendata.aws/silam."
+open:
+  "var": "concentration_in_air_pm2_5"
+  "init_time": "#917"
+  "dim.step": "#2"
+  "axes": "longitude,latitude"
+  "latitude": "#1..#897"
+  "longitude": "#1..#1800"
+  "plot": "heatmap"
+  "cmap": "scientific:lajolla"
+  "scale": "log"
+  "range": "0.4951..57.12"
+thumbnail: /gallery/silam-aerosol.webp
+---
+
+Daily global atmospheric composition and air quality forecast from FMI's SILAM model (about 20 km), including aerosol optical thickness.

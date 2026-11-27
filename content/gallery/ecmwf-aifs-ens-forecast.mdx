@@ -1,0 +1,26 @@
+---
+title: "ECMWF AIFS ENS forecast"
+description: "Global 0.25 degree ensemble forecasts from ECMWF's machine-learning AIFS ENS model, initialized every 6 hours, out to 15 days."
+store: https://dynamical-ecmwf-aifs-ens.s3.us-west-2.amazonaws.com/ecmwf-aifs-ens-forecast/v0.1.0.icechunk/
+format: icechunk
+domain: weather
+credit: "ECMWF AIFS ENS forecast data processed by dynamical.org from ECMWF Open Data."
+license: "CC-BY-4.0 (plus ECMWF Terms of Use)"
+license_url: https://creativecommons.org/licenses/by/4.0/
+source_page: https://dynamical.org/catalog/ecmwf-aifs-ens-forecast/
+citation: "dynamical.org dataset DOI: https://doi.org/10.5281/zenodo.18777399"
+open:
+  "var": "pressure_reduced_to_mean_sea_level"
+  "init_time": "#2052"
+  "lead_time": "#2"
+  "ensemble_member": "#1"
+  "axes": "longitude,latitude"
+  "latitude": "#1..#721"
+  "longitude": "#1..#1440"
+  "plot": "heatmap"
+  "cmap": "scientific:vik"
+  "range": "9.632e+04..1.022e+05"
+thumbnail: /gallery/ecmwf-aifs-ens-forecast.webp
+---
+
+Global 0.25 degree ensemble forecasts from ECMWF's machine-learning AIFS ENS model, initialized every 6 hours, out to 15 days.

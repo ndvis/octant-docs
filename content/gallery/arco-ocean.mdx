@@ -1,0 +1,25 @@
+---
+title: "ARCO-OCEAN"
+description: "Global Ocean Reanalysis Daily"
+store: https://ogs-arco-ocean.s3.eu-south-1.amazonaws.com/dataset/tres=1d/res=0p25/levels=10/
+format: zarr
+domain: ocean
+credit: "OGS (National Institute of Oceanography and Applied Geophysics), Campanella et al.; contains modified E.U. Copernicus Marine Service Information (GLORYS12, https://doi.org/10.48670/moi-00021)."
+license: "CC-BY-4.0"
+license_url: https://creativecommons.org/licenses/by/4.0/
+source_page: https://registry.opendata.aws/ogs-arco-ocean/
+citation: "Campanella, S., Salon, S., Querin, S., Bortolussi, L., and Stock, J.: ARCO-OCEAN: A dataset of physical properties of the ocean, waves, and sea ice, with hydrological and atmospheric forcing, optimized for machine learning, accessed on DD-MM-YYYY. https://doi.org/10.5281/zenodo.17751608"
+open:
+  "var": "thetao"
+  "time": "#10407"
+  "level": "#1"
+  "axes": "lon,lat"
+  "lat": "#1..#721"
+  "lon": "#1..#1440"
+  "plot": "heatmap"
+  "cmap": "cmocean:thermal"
+  "range": "-1.848..30"
+thumbnail: /gallery/arco-ocean.webp
+---
+
+Analysis-ready daily 0.25 degree dataset of ocean physics (10 depth levels), waves and sea ice, with atmospheric and hydrological forcing, built from reanalyses for machine learning.

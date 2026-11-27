@@ -1,0 +1,26 @@
+---
+title: "NOAA GEFS forecast, 35 day"
+description: "Global Ensemble Forecast System (GEFS) forecasts from NOAA NWS NCEP, initialized daily since October 2020, 0.25 degree to 240 hours and 0.5 degree to 35 days."
+store: https://dynamical-noaa-gefs.s3.us-west-2.amazonaws.com/noaa-gefs-forecast-35-day/v0.2.0.icechunk/
+format: icechunk
+domain: weather
+credit: "NOAA NWS NCEP GEFS data processed by dynamical.org from NOAA Open Data Dissemination archives."
+license: "CC-BY-4.0"
+license_url: https://creativecommons.org/licenses/by/4.0/
+source_page: https://dynamical.org/catalog/noaa-gefs-forecast-35-day/
+citation: "dynamical.org dataset DOI: https://doi.org/10.5281/zenodo.18777399"
+open:
+  "var": "precipitable_water_atmosphere"
+  "init_time": "#2248"
+  "ensemble_member": "#1"
+  "lead_time": "#2"
+  "axes": "longitude,latitude"
+  "latitude": "#1..#721"
+  "longitude": "#1..#1440"
+  "plot": "heatmap"
+  "cmap": "cmocean:haline"
+  "range": "3.953..46.75"
+thumbnail: /gallery/noaa-gefs-35day-forecast.webp
+---
+
+Global Ensemble Forecast System (GEFS) forecasts from NOAA NWS NCEP, initialized daily since October 2020, 0.25 degree to 240 hours and 0.5 degree to 35 days.

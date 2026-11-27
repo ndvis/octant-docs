@@ -1,0 +1,25 @@
+---
+title: "Met Office Global Deterministic 10 km (6-hourly, 24-hour store)"
+description: "6-hourly 24hr"
+store: https://data.source.coop/bkr/metoffice/metoffice_global_deterministic_10km_6hourly_24hr.icechunk
+format: icechunk
+domain: weather
+credit: "British Crown copyright, the Met Office, licensed under CC BY-SA 4.0. Icechunk copy by Jacob Prince-Bieker (Source Cooperative, bkr/metoffice)."
+license: "CC-BY-SA-4.0"
+license_url: https://creativecommons.org/licenses/by-sa/4.0/
+source_page: https://source.coop/bkr/metoffice
+citation: "Met Office Global Deterministic 10km on a 2-year rolling archive was accessed on DATE from https://registry.opendata.aws/met-office-global-deterministic"
+open:
+  "var": "total_cloud_cover"
+  "init_time": "#1090"
+  "dim.step": "#2"
+  "axes": "longitude,latitude"
+  "latitude": "#1..#1920"
+  "longitude": "#1..#2560"
+  "plot": "heatmap"
+  "cmap": "cmocean:gray"
+  "range": "0..1"
+thumbnail: /gallery/metoffice-global-deterministic-6h.webp
+---
+
+Global numerical weather prediction from the Met Office Unified Model (global configuration, about 10 km), from the Met Office 2-year rolling archive repackaged as Icechunk.

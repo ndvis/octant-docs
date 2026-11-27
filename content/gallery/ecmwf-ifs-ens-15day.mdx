@@ -1,0 +1,26 @@
+---
+title: "ECMWF IFS ENS forecast, 15 day, 0.25 degree"
+description: "0.25°"
+store: https://dynamical-ecmwf-ifs-ens.s3.us-west-2.amazonaws.com/ecmwf-ifs-ens-forecast-15-day-0-25-degree/v0.1.0.icechunk/
+format: icechunk
+domain: weather
+credit: "ECMWF IFS ENS forecast data processed by dynamical.org from ECMWF Open Data."
+license: "CC-BY-4.0 (plus ECMWF Terms of Use)"
+license_url: https://creativecommons.org/licenses/by/4.0/
+source_page: https://dynamical.org/catalog/ecmwf-ifs-ens-forecast-15-day-0-25-degree/
+citation: "dynamical.org dataset DOI: https://doi.org/10.5281/zenodo.18777399"
+open:
+  "var": "total_cloud_cover_atmosphere"
+  "init_time": "#2234"
+  "lead_time": "#2"
+  "ensemble_member": "#1"
+  "axes": "longitude,latitude"
+  "latitude": "#1..#721"
+  "longitude": "#1..#1440"
+  "plot": "heatmap"
+  "cmap": "cmocean:gray"
+  "range": "0..100"
+thumbnail: /gallery/ecmwf-ifs-ens-15day.webp
+---
+
+Global 0.25 degree ensemble forecasts from ECMWF's Integrated Forecasting System, initialized daily since October 2020, out to 15 days.
