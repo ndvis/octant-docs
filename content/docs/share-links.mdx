@@ -27,6 +27,7 @@ It opens in the browser, or in the desktop app when pasted into its address fiel
 | `cmap` | The colormap, as `family:name` |
 | `range` | The color range, `250..310` |
 | `view` | A zoomed heatmap's visible window, `x0..x1,y0..y1` in coordinate values |
+| `camera` | A 3D plot's camera, `pitch,yaw,distance`: angles in degrees, then the distance to the point looked at; three more numbers, `x,y,z`, when that point is off center (never for the sphere). `camera=14.3,-30,2.6` |
 | `overlay` | A variable drawn over the heatmap; repeat for more |
 
 Values are written as the coordinates read: ISO dates, numbers in the coordinate's
