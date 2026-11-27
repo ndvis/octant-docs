@@ -1,0 +1,13 @@
+[package]
+name = "octant-thumbnails"
+version = "0.1.0"
+edition = "2024"
+publish = false
+description = "Gallery thumbnails: each entry opened in Octant from its share link and saved as WebP"
+
+[dependencies]
+form_urlencoded = "1"
+image = { version = "0.25", default-features = false, features = ["png"] }
+serde = { version = "1", features = ["derive"] }
+serde_yaml_ng = "0.10"
+webp = "0.3"

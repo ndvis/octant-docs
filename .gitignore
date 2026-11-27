@@ -27,3 +27,6 @@ next-env.d.ts
 
 # source footage for the hero reel (hero.mp4/webm), too large for git
 public/Octant_demo.mp4
+
+# the thumbnails tool's build
+/tools/thumbnails/target

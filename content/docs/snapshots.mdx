@@ -1,0 +1,52 @@
+---
+title: Thumbnails and scripting
+description: Save a share link's plot as an image from the command line.
+---
+
+The desktop app opens a [share link](/docs/share-links), waits until the plot has
+loaded, saves it as an image and quits:
+
+```bash
+octant --snapshot out.png "https://ndvis.github.io/octant/?src=https://x/a.zarr&var=t2m&plot=heatmap"
+```
+
+It waits for the data, the coordinates and, on a zoomed or multiscale view, the finer
+detail, then for four seconds without change. The panels are closed for the capture.
+
+## Options
+
+| Option | Meaning |
+|---|---|
+| `--snapshot <file>` | Where the image goes; its extension sets the format: `png`, `jpg`, `webp`, `svg` or `pdf` (SVG and PDF hold the image) |
+| `--size WxH` | The image's exact pixels, such as `800x450`: the plot scaled to cover them and cropped at the centre. Without it, the canvas's own pixels |
+| `--timeout <seconds>` | Longest wait, 120 by default |
+| `--no-colorbar` | Leave the colorbars out |
+| `--no-axes` | Leave the axes out |
+
+The link may also come first, before the options.
+
+## In scripts
+
+| Exit code | Meaning |
+|---|---|
+| `0` | The image was saved |
+| `1` | It failed: the store could not be read, the link plotted nothing, or the timeout passed. The reason is printed |
+| `2` | The command line was wrong |
+
+Warnings Octant shows while loading are printed too, and loading stops at the first
+error. A window opens while it captures, so it needs a display; each capture takes as
+long as the data takes to load.
+
+## Gallery thumbnails
+
+A gallery thumbnail is an 800x450 WebP, made any way you like. For convenience,
+`tools/thumbnails` in the [docs repository](https://github.com/ndvis/octant-docs)
+makes it this way:
+
+```bash
+cargo run --release --manifest-path tools/thumbnails/Cargo.toml -- <entry>
+```
+
+It opens each entry from the link its **Open in Octant** button uses, with
+`--size 800x450`, and saves a WebP with the axes and colorbar where the entry's
+`thumbnail` points; `--no-colorbar` and `--no-axes` leave those out.

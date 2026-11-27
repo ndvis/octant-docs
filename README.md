@@ -20,6 +20,7 @@ npm run build   # static site in out/
 | `lib/gallery.ts`            | The gallery entry schema and the "Open in Octant" link       |
 | `app/(home)/gallery/`       | Gallery grid and dataset pages                               |
 | `app/gallery.json/route.ts` | The gallery as JSON (`/gallery.json`)                        |
+| `tools/thumbnails/`         | Makes the gallery's thumbnails with Octant (Rust)            |
 
 ## Add a dataset to the gallery
 
@@ -50,3 +51,21 @@ A paragraph or two about the dataset, shown on its page.
 
 Open the store in Octant before sending the pull request, and only add data whose
 license allows linking to it publicly.
+
+### Add a thumbnail
+
+A thumbnail is an 800x450 WebP under `public/gallery/`, named by the entry's
+`thumbnail` field; make it any way you like, such as a screenshot of the plot in
+Octant. For convenience, a small Rust tool makes it with Octant itself. With
+[Rust](https://rust-lang.org/tools/install/) and Octant installed (`cargo install octant`):
+
+```bash
+cargo run --release --manifest-path tools/thumbnails/Cargo.toml -- <key>
+```
+
+This opens the entry in Octant from the same share link as its "Open in Octant" button,
+waits until the plot has loaded, and saves an 800x450 WebP with its axes and colorbar
+where `thumbnail` points (`/gallery/<key>.webp` when the entry has none: add that
+line). A window shows while it captures. Without a key it remakes every thumbnail;
+`--octant <path>` uses another Octant build, and `--no-colorbar` or `--no-axes` leave
+those out. See the docs page [Thumbnails and scripting](content/docs/snapshots.mdx).
