@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { FormatBadge } from "./format-badge";
 import { OpenButtons } from "./open-buttons";
 
 export interface CardData {
@@ -64,7 +65,7 @@ export function GalleryGrid({ cards }: { cards: CardData[] }) {
         {shown.map((c) => (
           <article
             key={c.url}
-            className="flex flex-col rounded-xl border bg-fd-card overflow-hidden"
+            className="flex flex-col rounded-xl border bg-fd-card overflow-hidden transition duration-200 hover:border-fd-primary/30 hover:shadow-md motion-safe:hover:-translate-y-0.5"
           >
             <Link href={c.url} className="block aspect-video bg-fd-muted">
               {c.thumbnail ? (
@@ -74,21 +75,24 @@ export function GalleryGrid({ cards }: { cards: CardData[] }) {
                   className="size-full object-cover"
                 />
               ) : (
-                <div className="flex size-full items-center justify-center text-fd-muted-foreground text-sm uppercase tracking-wide">
-                  {c.format}
+                <div className="flex size-full items-center justify-center">
+                  <FormatBadge format={c.format} />
                 </div>
               )}
             </Link>
             <div className="flex flex-1 flex-col gap-2 p-4">
-              <Link href={c.url} className="font-semibold hover:underline">
-                {c.title}
-              </Link>
+              <div className="flex items-start justify-between gap-2">
+                <Link href={c.url} className="font-semibold hover:underline">
+                  {c.title}
+                </Link>
+                <span className="shrink-0 pt-0.5">
+                  <FormatBadge format={c.format} />
+                </span>
+              </div>
               <p className="text-sm text-fd-muted-foreground flex-1">
                 {c.description}
               </p>
-              <p className="text-xs text-fd-muted-foreground">
-                {c.format} · {c.credit}
-              </p>
+              <p className="text-xs text-fd-muted-foreground">{c.credit}</p>
               <OpenButtons
                 href={c.href}
                 store={c.store}

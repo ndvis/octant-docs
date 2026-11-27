@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { FormatBadge } from "@/components/gallery/format-badge";
 import { OpenButtons } from "@/components/gallery/open-buttons";
 import { getMDXComponents } from "@/components/mdx";
 import { gallery, octantLink } from "@/lib/gallery";
@@ -14,7 +15,7 @@ export default async function EntryPage(props: PageProps<"/gallery/[slug]">) {
   const Body = d.body;
 
   const facts: [string, React.ReactNode][] = [
-    ["Format", d.format],
+    ["Format", <FormatBadge key="f" format={d.format} />],
     ["Credit", d.credit],
     [
       "License",
