@@ -1,0 +1,27 @@
+---
+title: "MRT angio (CT)"
+description: "3T MRT Time-of-Flight Angiography dataset of a human head."
+store: https://ome-zarr-scivis.s3.us-east-1.amazonaws.com/v0.5/96x2/mrt_angio.ome.zarr
+format: ome-zarr
+domain: medical
+tags: [ome-zarr, multiscale, volume, ct]
+credit: "volvis.org and \u00d6zlem G\u00fcrvit, Institute for Neuroradiology, Frankfurt, Germany; via Open SciVis Datasets (Pavol Klacansky) and OME-Zarr Open SciVis Datasets (Matt McCormick)."
+license: "CC-BY-4.0"
+license_url: https://creativecommons.org/licenses/by/4.0/
+source_page: https://github.com/InsightSoftwareConsortium/OMEZarrOpenSciVisDatasets#mrt_angio
+citation: "McCormick, M. (2025). OME-Zarr Open SciVis Datasets (v2025.10.31). Zenodo. https://doi.org/10.5281/zenodo.17495294"
+open:
+  "var": "scale0/mrt_angio"
+  "axes": "x,y,z"
+  "z": "#1..#112"
+  "y": "#1..#512"
+  "x": "#1..#416"
+  "plot": "volume"
+  "cmap": "classic:bone"
+  "range": "74..204"
+  "low": "00000000"
+  "camera": "30,-35,1.0"
+thumbnail: /gallery/scivis-mrt-angio.webp
+---
+
+3T MRT Time-of-Flight Angiography dataset of a human head. The dataset has been resampled into an isotropic voxel grid (hence the peculiar slice size).

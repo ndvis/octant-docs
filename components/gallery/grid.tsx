@@ -89,10 +89,12 @@ export function GalleryGrid({ cards }: { cards: CardData[] }) {
                   <FormatBadge format={c.format} />
                 </span>
               </div>
-              <p className="text-sm text-fd-muted-foreground flex-1">
+              <p className="text-sm text-fd-muted-foreground flex-1 max-h-24 overflow-y-auto [scrollbar-width:thin]">
                 {c.description}
               </p>
-              <p className="text-xs text-fd-muted-foreground">{c.credit}</p>
+              <p className="text-xs text-fd-muted-foreground max-h-12 shrink-0 overflow-y-auto [scrollbar-width:thin]">
+                {c.credit}
+              </p>
               <OpenButtons
                 href={c.href}
                 store={c.store}
