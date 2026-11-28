@@ -32,6 +32,7 @@ export const galleryEntrySchema = z.object({
     "earth-observation",
     "microscopy",
     "medical",
+    "scivis",
     "other",
   ]),
   tags: z.array(z.string()).default([]),

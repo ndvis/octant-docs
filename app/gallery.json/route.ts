@@ -19,6 +19,7 @@ export function GET() {
     citation: d.citation,
     open: d.open,
     desktop_only: d.desktop_only,
+    thumbnail: d.thumbnail,
   }));
   return Response.json({ version: 1, entries });
 }

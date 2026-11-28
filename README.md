@@ -33,7 +33,7 @@ title: NASA MUR Sea Surface Temperature
 description: One sentence for the card.
 store: https://mur-sst.s3.us-west-2.amazonaws.com/zarr-v1/
 format: zarr            # zarr | icechunk | ome-zarr | geotiff | netcdf | hdf5 | grib
-domain: ocean           # climate | weather | ocean | earth-observation | microscopy | medical | other
+domain: ocean           # climate | weather | ocean | earth-observation | microscopy | medical | scivis | other
 tags: [sst, satellite]
 credit: NASA JPL PO.DAAC          # as the provider asks to be credited
 license: NASA open data           # SPDX id where one exists
