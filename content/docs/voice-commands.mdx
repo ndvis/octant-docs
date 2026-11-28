@@ -1,0 +1,89 @@
+---
+title: Voice and typed commands
+description: Drive Octant by speaking or typing commands in the voice bar. Experimental.
+---
+
+<Callout type="warn" title="Experimental">
+  Voice and typed commands are still being built. Commands may be misheard or not
+  understood, and phrasings may change between releases. The panels and keyboard
+  remain the reliable way to do everything listed here.
+</Callout>
+
+The voice bar takes commands in plain words, spoken into the microphone or typed into
+its field, and runs them as if you had used the panels: open a dataset, plot a
+variable, move through time, change colors.
+
+## Open the voice bar
+
+Click **Voice** in the top bar, or press <kbd>M</kbd> to go straight to the command
+field. The bar replaces the playback bar while it is open; closing it drops any
+commands still waiting.
+
+## Speech to text
+
+Speech is transcribed on your own machine by OpenAI's
+[Whisper](https://github.com/openai/whisper). Nothing you say leaves your computer.
+The model is downloaded once from OpenAI's Hugging Face repositories, checked against
+pinned hashes, and kept for next time; Octant does not ship it.
+
+| Model | Download | Where |
+|---|---|---|
+| tiny | 151 MB | Desktop and browser (the default) |
+| base | 290 MB | Desktop |
+| small | 967 MB | Desktop |
+| large-v3-turbo | 1,618 MB | Desktop |
+
+Pick the model from the menu in the bar. Larger models hear better and take longer.
+On the desktop Whisper runs on the Apple GPU when there is one, otherwise on the CPU;
+in the browser it runs on the CPU, so only tiny is offered.
+
+Whisper detects the language of each utterance, and commands are understood in every
+language Octant's interface is translated into, whichever the interface is set to.
+
+## What the bar shows
+
+| State | Meaning |
+|---|---|
+| Microphone off | Not listening. Click the microphone to start |
+| Downloading the speech model | First use of a model: its download progress |
+| Loading the speech model | The model is being read into memory |
+| Listening | The disk pulses with what the microphone hears; the words appear as they are recognised |
+| The microphone sends only silence | The system denied the microphone. Allow it for the app that started Octant in the privacy settings, then restart Octant |
+| Microphone unavailable | No microphone could be opened |
+| Transcription failed | Whisper could not run; the reason is shown |
+
+After each command the bar shows what it did, such as "Plotted t2m as Heatmap", or
+why it did not run, such as "No variable matches 'sstt'", with the names it may have
+meant.
+
+## Typed commands
+
+The field in the bar takes the same commands as speech, and needs no microphone or
+model. Press <kbd>Enter</kbd> to run it.
+
+## Commands
+
+Variables, dimensions and datasets are named as the dataset names them (`t2m`,
+`ocean/sst`, a long name such as "sea surface temperature"); for a name it cannot find,
+the bar suggests the closest ones.
+
+| Say or type | What it does |
+|---|---|
+| `open the gallery` | Open the dataset gallery |
+| `open seasfire` | Open a gallery entry, or a dataset by its address (`s3://`, `gs://`, `https://`, a local path) |
+| `list the variables`, `search for temperature` | List or search the dataset's variables |
+| `describe sst` | Describe a variable or the dataset |
+| `select sst` | Select a variable without plotting it |
+| `plot t2m`, `plot t2m as a volume` | Plot a variable, optionally as a given plot type |
+| `time 15 January 2020`, `go to March 2010` | Move a dimension to a value |
+| `level 500 to 1000`, `latitude -30 to 60` | Limit a dimension to a range |
+| `play`, `pause`, `next step`, `previous step` | Playback |
+| `colormap viridis` | Change the colormap |
+| `color range 250 to 300` | Set the color range |
+| `plot sst as an overlay`, `hide sst`, `unhide sst`, `remove sst` | Overlays |
+| `reset view` | Reset zoom and camera |
+| `export as pdf` | Save the figure in a format |
+
+Chain commands with "then" or commas: `open seasfire, then plot t2m as a volume, then
+play`. Each command waits for the one before it, so a plot waits for its dataset to
+load. When one fails, the rest are dropped.
